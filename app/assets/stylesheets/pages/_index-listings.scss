@@ -10,3 +10,24 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.listings-container {
+  margin: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-items: stretch;
+}
+
+@media(max-width: 992px) {
+  .listings-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .listings-container {
+    grid-template-columns: 1fr;
+  }
+}

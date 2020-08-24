@@ -2,6 +2,7 @@
   "name": "Islebnb",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

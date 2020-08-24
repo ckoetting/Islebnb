@@ -12,9 +12,9 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(cocktail_params)
+    @listing = Listing.new(listing_params)
     if @listing.save
-      redirect_to cocktail_path(@listing)
+      redirect_to listing_path(@listing)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description)
+    params.require(:listing).permit(:title, :description, photos: [])
   end
 
 end

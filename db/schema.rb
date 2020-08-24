@@ -10,9 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_08_24_122716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "accepted", default: false
+    t.bigint "users_id"
+    t.bigint "listings_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listings_id"], name: "index_bookings_on_listings_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "users_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["users_id"], name: "index_listings_on_users_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "stars"
+    t.string "description"
+    t.bigint "listings_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listings_id"], name: "index_reviews_on_listings_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "full_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bookings", "listings", column: "listings_id"
+  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "listings", "users", column: "users_id"
+  add_foreign_key "reviews", "listings", column: "listings_id"
 end

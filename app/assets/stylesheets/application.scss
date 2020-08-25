@@ -11,3 +11,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// nav
+.navbar-left {
+  display: flex;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 100px;
+}
+
+.navbar-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}

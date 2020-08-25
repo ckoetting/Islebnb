@@ -1,7 +1,7 @@
-body {
-  background: image-url('sign-up-background.jpg') no-repeat;
+.container-fluid {
+  background: image-url('sign-up-background.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
   height: 100vh;
 }
 
@@ -27,4 +27,22 @@ label {
 input {
   color: white !important;
   font-weight: bold !important;
+}
+
+// line with text in the
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
 }

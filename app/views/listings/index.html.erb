@@ -7,9 +7,8 @@
 </div>
 <div class="listings-container">
 <%@listings.each do |listing|%>
-  <div class="listing-card">
-
-
+  <div class="listing-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photos.first.key, crop: :fill %>')">
+  <h5><a class="btn btn-dark" href="/cocktails/<%=cocktail.id%>" role="button"><%=listing.title%></a></h5>
   </div>
 <%end%>
 </div>

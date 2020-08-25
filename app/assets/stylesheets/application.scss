@@ -13,6 +13,11 @@
 @import "pages/index";
 
 // nav
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .navbar-left {
   display: flex;
 }
@@ -29,4 +34,41 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+// footer
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+.footer h7 {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+
+.footer-links {
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-social {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
 }

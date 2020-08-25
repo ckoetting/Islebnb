@@ -1,11 +1,11 @@
-<div class="container-fluid">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-md-6 col-3">
-      <div class="form-container">
-    <h4>Sign up and start searching</h4>
+<div class="form-wrapper">
+  <div class="form-container">
+    <h4 class="form-styling">
+  Sign up and start searching</h4>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-  <div class="form-group mt-4">
+    <div class="form-inputs form-styling">
     <%= f.input :full_name%>
     <%= f.input :email,
                 required: true,
@@ -18,16 +18,14 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-<div class="btn btn-primary btn-block">
-    <%= f.button :submit, "Sign up" %>
+   </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block"%>
     </div>
 <% end %>
 <div class="separator mt-3">Already have an account?</div>
-<div style="text-align: center;" class="mt-3">
+<div style="text-align: center" class="mt-3">
 <%= render "devise/shared/links" %>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

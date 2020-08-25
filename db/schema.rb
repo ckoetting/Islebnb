@@ -40,30 +40,30 @@ ActiveRecord::Schema.define(version: 2020_08_24_124200) do
     t.date "start_date"
     t.date "end_date"
     t.boolean "accepted", default: false
-    t.bigint "users_id"
-    t.bigint "listings_id"
+    t.bigint "user_id"
+    t.bigint "listing_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["listings_id"], name: "index_bookings_on_listings_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["listing_id"], name: "index_bookings_on_listing_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_listings_on_users_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.string "description"
-    t.bigint "listings_id"
+    t.bigint "listing_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["listings_id"], name: "index_reviews_on_listings_id"
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(version: 2020_08_24_124200) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "listings", column: "listings_id"
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "listings", "users", column: "users_id"
-  add_foreign_key "reviews", "listings", column: "listings_id"
+  add_foreign_key "bookings", "listings"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "listings", "users"
+  add_foreign_key "reviews", "listings"
 end

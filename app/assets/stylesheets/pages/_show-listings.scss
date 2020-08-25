@@ -1,0 +1,67 @@
+.listing-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-items: stretch;
+}
+.photo {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.show-container {
+  margin: 20px;
+}
+.listing-header {
+  border-top: 2px solid black;
+  margin-top: 25px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: lighter;
+}
+.listing-header h3 {
+  padding-top: 20px;
+}
+.listing-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.price {
+  height: 400px;
+  width: 350px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.price h5 {
+  padding: 15px;
+}
+.modal {
+  background-color: transparent;
+  box-shadow: none;
+}
+.dates {
+  display: flex;
+  flex-direction: column;
+}
+.book {
+  height: 250px;
+  width: 500px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

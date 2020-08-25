@@ -1,0 +1,32 @@
+<body>
+<div class="show-container">
+<div class="listing-photos">
+  <%@listing.photos.each do |photo|%>
+  <div class="photo" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')">
+  </div>
+  <%end%>
+</div>
+<div class="listing-header">
+  <h3><%=@listing.title%><h3>
+</div>
+<div class="listing-details-container">
+<div class="general-info">
+</div>
+<div class="book">
+<div class="dates">
+   <h5>Start date</h5>
+    <a class="waves-effect waves-light btn datepicker">Start Date</a>
+   <h5>End date</h5>
+   <input id="end-date" type="text" class="datepicker">
+</div>
+</div>
+<div class="price">
+  <h4>Prices</h4>
+  <h5>Price per night: <%=@listing.price%></h5>
+  <h5>Cleaning fee: 2.000</h5>
+  <h5>Cleaning fee: 10.000</h5>
+  <h5>Taxes: 1.500</h5>
+</div>
+</div>
+</div>
+</body>

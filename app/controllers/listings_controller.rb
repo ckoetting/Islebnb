@@ -40,7 +40,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description, photos: [])
+    params.require(:listing).permit(:title, :description, :price, photos: [])
   end
 
 end

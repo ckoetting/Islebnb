@@ -9,7 +9,7 @@
  
 <div class="flex-1">
   <div class="flex-2">
-  <%= form_tag listings_path, method: :get do %>
+  <%= form_tag listings_path, method: :get, id: "search" do %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <%= text_field_tag :query,
     params[:query],
@@ -30,5 +30,5 @@
         </a>
       </h5>
     </div>
-  </div> 
 <% end %>
+</div>

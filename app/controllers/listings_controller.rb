@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  def index 
+  def index
     @listings = Listing.all
   end
 
@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
-  def new 
+  def new
     @listing = Listing.new
   end
 
@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
     redirect_to listings_path
   end
 
-  def edit 
+  def edit
     @listing = Listing.find(params[:id])
   end
 
@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
   end
-  
+
   private
 
   def listing_params

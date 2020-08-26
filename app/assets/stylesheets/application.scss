@@ -72,3 +72,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+
+.carousel .carousel-item.active {
+  visibility: visible;
+  height: 100%;
+  width: 100%;
+  img {
+    object-fit: cover;
+  }
+}

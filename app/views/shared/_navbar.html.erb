@@ -26,9 +26,8 @@
       <% if user_signed_in? %>
       <!-- avatar dropleft button -->
         <div class="dropleft">
-          <%if current_user.photo.attached?%>
-          <img src="<%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill %>" class="dropdown-toggle circle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 50px; height: 50px;">
-          <%end%>
+          <img src="https://res.cloudinary.com/corneliuskf/image/upload/v1598453739/IMG_0185_hr3jjl.jpg" class="dropdown-toggle circle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 80px; height: 50px;">
+  
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="/users/<%= current_user.id %>">My Profile</a>
             <a class="dropdown-item" href="/users/my_bookings">My Bookings</a>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :bookings
   end
   resources :users
+  get 'users/my_bookings', to: 'users#my_bookings'
 end

@@ -1,0 +1,42 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=cl_image_path @booking.listing.photos.first.key%>');">
+  <div class="banner-container">
+      <h3><%=@booking.listing.title%></h3>
+      <div id="banner-logo-seperator"></div>
+      <div class="banner-icons">
+        <%=link_to change_status_path(@booking), class: "btn-floating btn-large waves-effect waves-light green" do%><svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+          </svg>
+        <%end%>
+        <%=link_to change_status_path(@booking), class: "btn-floating btn-large waves-effect waves-light red" do%><svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+          <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+          </svg>
+        <%end%>
+      </div>
+  </div>
+</div>
+<h3 style="text-align: center; margin: 15px; font-size: 35px;">Booking Details:</h3>
+<div class="booking-details-container">
+  <div class="booking-details">
+    <h5>Booking accepted: 
+    <%if @booking.accepted%>
+      <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </svg>
+    <%else%>
+    <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+    </svg>
+    <%end%>
+    </h5>
+    <h5>Start Date: <%=@booking.start_date%></h5>
+    <h5>End Date: <%=@booking.end_date%></h5>
+    <h5>Total Number of Guests: <%=@booking.number_of_guests%></h5>
+    <h5>Name of Guest: <%=@booking.full_name%></h5>
+    <h5>Age of Guest: <%=@booking.age%></h5>
+    <h5>Address: <%=@booking.address%></h5>
+    <h5>Email: <%=@booking.user.email%></h5>
+    <h5>Message: <%=@booking.message%></h5>
+  </div>
+</div>

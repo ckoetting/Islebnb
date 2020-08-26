@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :reviews
     resources :bookings
   end
-  get 'users/my_bookings', to: 'users#my_bookings'
+  get 'users/my_booking_requests', to: 'users#my_booking_requests', as: :my_booking_requests
+  get 'users/my_bookings', to: 'users#my_bookings', as: :my_bookings
+  get 'users/my_booking_requests/:id/change_status', to: 'bookings#change_status', as: :change_status
   resources :users
 end

@@ -26,7 +26,16 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  def my_bookings
+  def my_booking_requests
+    @my_booking_requests = []
+    current_user.listings.each do |listing|
+      listing.bookings.each do |l|
+       @my_booking_requests << l
+      end
+    end
+  end
+
+  def my_bookings 
     @my_bookings = current_user.bookings
   end
 

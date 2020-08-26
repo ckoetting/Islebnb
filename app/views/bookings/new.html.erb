@@ -1,0 +1,17 @@
+<div class="form-wrapper">
+<h4 class="form-w">
+    Book your Island now!</h4>
+<div class="flex-container">
+  <div class="flex-item"></div>
+<%= simple_form_for [@listing, @booking] do |f| %>
+  <%= f.input :full_name %>
+  <%= f.input :age %>
+  <%= f.input :address %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :message %>
+  <%= f.button :submit %>
+<% end %>
+</div>
+</div>

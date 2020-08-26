@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy, :change_status]
+  before_action :set_booking, only: [:edit, :update, :destroy, :change_status]
 
   def index
     @bookings = Booking.all
@@ -7,9 +7,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-  end
-
-  def show
+    @listing = Listing.find(params[:listing_id])
   end
 
   def edit
@@ -17,8 +15,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.listing = Listing.find(params[:listing_id])
     if @booking.save
-      redirect_to booking_path(@booking), notice: 'Booking succesfully created.'
+      redirect_to @booking.listing, notice: 'Booking succesfully created.'
     else
       render :new
     end
@@ -55,7 +55,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :accepted)
+    params.require(:booking).permit(:start_date, :end_date, :accepted, :message, :full_name, :age, :address, :number_of_guests)
   end
 
 end

@@ -14,7 +14,9 @@
   <%= f.input :house_type %>
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit %>
+   <div class="form-go">
+    <%= f.button :submit, "Register Island",  class: "btn btn-primary btn-block" %>
+  </div>
 <% end %>
 
 </div>

@@ -30,5 +30,10 @@
         
         width: 200px;
         margin: 10px;
-        
-      }
+        }
+        .btn-primary {
+            background-color: #039be5;
+            &:hover {
+                  background-color: #03a9f4;
+              }
+          }

@@ -1,30 +1,58 @@
-<body>
-<div class="show-container">
-<div class="listing-photos">
-  <%@listing.photos.each do |photo|%>
-  <div class="photo" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')">
+<div class="show-wrapper">
+<!--   <div class="row">
+    <h4 class="ml20"><%=@listing.title%></h4>
+  </div> -->
+  <div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner h-100">
+          <%@listing.photos.each_with_index do |photo, index|%>
+          <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+            <%= cl_image_tag photo.key, class: "d-block w-100 h-100", height: 800, crop: 'fill' %>
+          </div>
+          <%end%>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
-  <%end%>
+  <div class="row ml20">
+    <div class="col s8">
+      <div class="d-flex">
+      <div class="flex-grow-1"><h6><%=@listing.title%> by full name </h6></div><div>avatar</div>
+    </div>
+    <hr>
+    <ul>
+      <div class="d-flex mb10"><li><i class="material-icons">home</i></li>
+                <p class="ml10"><%=@listing.house_type%></p>
+      </div>
+      <div class="d-flex mb10"><li><i class="material-icons">hotel</i></li>
+                <p class="ml10"><%=@listing.bedrooms%></p>
+      </div>
+      <div class="d-flex mb10"><li><i class="material-icons">hot_tub</i></li>
+                <p class="ml10"><%=@listing.bathrooms%></p>
+      </div>
+      <div class="d-flex mb10"><li><i class="material-icons">group</i></li>
+                <p class="ml10"><%=@listing.max_guests%></p>
+      </div>
+      <div class="d-flex mb10"><li><i class="material-icons">map</i></li>
+                <p class="ml10"><%=@listing.address%></p>
+      </div>
+      <div class="d-flex mb10"><li><i class="material-icons">euro_symbol</i></li>
+        <p class="ml10"><%=@listing.price%></p>
+      </div>
+    </ul>
+    <hr>
+    </div>
+    <div class="col s4">
+      <h6>Description</h6>
+      <p><%=@listing.description%></p>
+      <a href="#" class="btn btn-primary">Book this island</a>
+    </div>
+  </div>
 </div>
-<div class="listing-header">
-  <h3><%=@listing.title%><h3>
-</div>
-<div class="listing-details-container">
-<div class="general-info">
-</div>
-<div class="book">
-<div class="dates">
-  <a class="waves-effect waves-light btn-large datepicker" id="start-date">Start Date</a>
-  <a class="waves-effect waves-light btn-large datepicker"id="end-date">End Date</a>
-</div>
-</div>
-<div class="price">
-  <h4>Prices</h4>
-  <h5>Price per night: <%=@listing.price%></h5>
-  <h5>Cleaning fee: 2.000</h5>
-  <h5>Cleaning fee: 10.000</h5>
-  <h5>Taxes: 1.500</h5>
-</div>
-</div>
-</div>
-</body>

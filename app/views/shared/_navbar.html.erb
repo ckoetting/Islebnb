@@ -26,7 +26,7 @@
       <% if user_signed_in? %>
       <!-- avatar dropleft button -->
         <div class="dropleft">
-          <img src="https://i.guim.co.uk/img/media/df45c2e9d42445906e840e43a27fe4428d785a54/0_302_3376_2026/master/3376.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=e806dfa3b52d7576e88b7de1e23b6f31" class="dropdown-toggle circle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 50px; height: 50px;">
+          <img src="<%= cl_image_path current_user.photo.key, height: 50, width: 50, crop: :fill %>" class="dropdown-toggle circle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 50px; height: 50px;">
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="/users/<%= current_user.id %>">My Profile</a>
             <a class="dropdown-item" href="/users/my_bookings">My Bookings</a>

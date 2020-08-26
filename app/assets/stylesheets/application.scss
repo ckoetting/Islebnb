@@ -12,12 +12,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show-users";
 
 // nav
 .nav-fixed {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
 }
 .navbar-left {
   display: flex;

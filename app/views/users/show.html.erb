@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5 m-6">
+      <div class="image">
+        <center><img src="https://i.guim.co.uk/img/media/df45c2e9d42445906e840e43a27fe4428d785a54/0_302_3376_2026/master/3376.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=e806dfa3b52d7576e88b7de1e23b6f31" class="circle" style="height: 250px; width: 250px;">
+        <%= link_to '<button type="button" class="btn-floating waves-effect waves-light red"><i class="material-icons">border_color</i></a>'.html_safe, edit_user_registration_path(@user) %></center>
+      </div>
+      <div class="card-content">
+        <h4 class="card-title"><%= @user.full_name %></h4>
+        <p>Robinson Crusoe, as a young and impulsive wanderer, defied his parents and went to sea. He was involved in a series of violent storms at sea and was warned by the captain that he should not be a seafaring man. Ashamed to go home, Crusoe boarded another ship and returned from a successful trip to Africa.</p>
+      </div>
+      <div class="certification">
+        <h6><i class="fas fa-comment"></i> 666 comments </h6>
+        <h6><i class="fas fa-cannabis"></i> Verified User </h6>
+        <h6><i class="fas fa-star"></i> 4.3 Avg Stars </h6>
+      </div>
+        <center><div class="buttons">
+          <%= link_to '<button type="button" class="btn nav-item btn-primary">Add Listing</button>'.html_safe, new_listing_path %>
+      <%= link_to '<button type="button" class="btn nav-item btn-primary">Check Bookings</button>'.html_safe, root_path %>
+        </div></center>
+      </div>
+    </div>
+  </div>
+

@@ -1,15 +1,15 @@
 class ReviewsController < ApplicationController
   def new
-    @booking = Booking.find(params[:booking_id])
+    @listing = Listing.find(params[:listing_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @booking = Booking.find(params[:booking_id])
-    @review.booking = @booking
+    @listing = Listing.find(params[:listing_id])
+    @review.listing = @listing
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to listing_path(@listing)
     else
       render :new
     end
@@ -31,9 +31,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     review = Review.find(params[:id])
-    booking = review.booking
+    listing = review.listing
     review.destroy
-    redirect_to booking_path(booking)
+    redirect_to listing_path(listing)
   end
 
   private

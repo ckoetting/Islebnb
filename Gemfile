@@ -35,6 +35,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
 gem 'faker'
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'

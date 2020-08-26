@@ -1,6 +1,14 @@
+<div class="form-wrapper">
+
+
+<h4 class="form-w">
+  Register your island</h4>
+<div class="flex-container">
+  <div class="flex-item"></div>
 <%= simple_form_for @listing do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
+  <%= f.input :address %>
   <%= f.input :bedrooms %>
   <%= f.input :bathrooms %>
   <%= f.input :max_guests %>
@@ -9,3 +17,7 @@
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit %>
 <% end %>
+
+</div>
+
+</div>

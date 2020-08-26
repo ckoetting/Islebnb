@@ -53,7 +53,9 @@
 }
 .dates {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: space-evenly;
 }
 .book {
   height: 250px;

@@ -1,6 +1,10 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    if params[:query].present?
+      @listings = Listing.where(title: params[:query])
+    else
+      @listings = Listing.all
+    end
   end
 
   def show

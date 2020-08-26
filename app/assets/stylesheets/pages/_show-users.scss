@@ -1,0 +1,29 @@
+.container {
+  justify-content: center;
+}
+.certification {
+  display: flex;
+  justify-content: space-around;
+  color: grey;
+  border: solid 1px grey;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.certification h6 {
+  padding: 0;
+  margin: 0;
+}
+.image {
+  justify-content: center;
+  margin: 20px;
+}
+.row {
+  justify-content: center;
+}
+.card-content {
+  text-align: center-justify;
+}
+.buttons {
+  justify-content: center;
+}

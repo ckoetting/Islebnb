@@ -26,9 +26,13 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def my_bookings
+    @my_bookings = current_user.bookings
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:full_name)
+    params.require(:user).permit(:full_name, :photo, :description)
   end
 end

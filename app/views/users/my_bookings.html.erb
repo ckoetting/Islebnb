@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);">
+  <div class="banner-container">
+      <img id="banner-logo" src="https://res.cloudinary.com/corneliuskf/image/upload/v1598349410/islebnb_w_rn3kyi.svg">
+      <div id="banner-logo-seperator"></div>
+      <h3>My Bookings</h3>
+  </div>
+</div>
+<div class="bookings-container">
+  <% @my_bookings.each do |booking| %>
+    <div class="booking-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= booking.listing.photos.any? ? (cl_image_path booking.listing.photos.first.key, heght: 280, crop: :fill) : "" %>')">
+    <h5>
+      <a class="booking-detail-link" href="/listings/<%= booking.listing.id %>/bookings/<%=booking.id%>"><%= booking.listing.title %></a>
+      </h5>
+      <p>Booking accepted: <%=booking.accepted%></p>
+    </div>
+  <% end %>
+</div>

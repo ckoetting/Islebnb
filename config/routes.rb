@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :reviews
     resources :bookings
   end
+  get 'users/my_bookings', to: 'users#my_bookings'
   resources :users
 end

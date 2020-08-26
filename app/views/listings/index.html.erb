@@ -5,6 +5,21 @@
       <h3>Your Island, your rules!</h3>
   </div>
 </div>
+
+ 
+<div class="flex-1">
+  <div class="flex-2">
+  <%= form_tag listings_path, method: :get do %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an Island"
+  %>
+  </div>
+</div>
+<% end %>
+
 <div class="listings-container">
   <% @listings.each do |listing| %>
 
@@ -15,6 +30,5 @@
         </a>
       </h5>
     </div>
-
-  <% end %>
-</div>
+  </div> 
+<% end %>

@@ -1,0 +1,28 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);">
+  <div class="banner-container">
+      <img id="banner-logo" src="https://res.cloudinary.com/corneliuskf/image/upload/v1598349410/islebnb_w_rn3kyi.svg">
+      <div id="banner-logo-seperator"></div>
+      <h3>My Listings</h3>
+  </div>
+</div>
+<div class="listings-container">
+  <% @my_listings.each do |listing| %>
+    <div class="listing-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= listing.photos.any? ? (cl_image_path listing.photos.first.key, heght: 280, crop: :fill) : "" %>')">
+    <h5>
+      <a class="listing-detail-link" href="/listings/<%= listing.id %>/"><%=listing.title%></a>
+      </h5>
+    <p>Listing Booked:
+    <%unless listing.bookings.empty?%>
+      <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </svg>
+    <%else%>
+    <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+    </svg>
+    <%end%>
+    </p>
+    </div>
+  <% end %>
+</div>

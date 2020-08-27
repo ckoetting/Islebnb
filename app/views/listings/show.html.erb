@@ -1,4 +1,5 @@
 <div class="show-wrapper">
+  <div class="show-container">
   <div class="row">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner h-100">
@@ -23,7 +24,10 @@
       <div class="d-flex">
       <div class="flex-grow-1 listings-title">
         <h6><%= @listing.title %> by full name </h6>
-        <span><p>⭐️ reviews <%= @listing.address %></p></span>
+        <span><p>⭐️ TODO:reviews <%= @listing.address %></p></span>
+      </div>
+      <div>
+        <img src="<%= cl_image_path current_user.photo.key%>" class="circle" style="height: 50px; width: 50px;">
       </div>
       <div class="listings-avatar">
         <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
@@ -105,13 +109,16 @@
       <%end%>
     </div>
     <div class="col s4">
-      <div class="listings-map">
+      <div>
         <div id="map"
-     style="width: 100%; height: 600px;"
+     style="height: 75vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>
       </div>
     </div>
+   </div>
   </div>
+</div>
+</div>
 </div>

@@ -26,9 +26,6 @@
         <h6><%= @listing.title %> by full name </h6>
         <span><p>⭐️ <%= @listing.reviews.first.stars %> NOT DONE YET | <%= @listing.address %></p></span>
       </div>
-      <div class="listings-avatar">
-        <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
-      </div>
       <div>
         <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
       </div>

@@ -2,17 +2,17 @@
   <div class="banner-container">
       <img id="banner-logo" src="https://res.cloudinary.com/corneliuskf/image/upload/v1598349410/islebnb_w_rn3kyi.svg">
       <div id="banner-logo-seperator"></div>
-      <h3>My Booking Requests</h3>
+      <h3>My Listings</h3>
   </div>
 </div>
-<div class="bookings-container">
-  <% @my_booking_requests.each do |booking| %>
-    <div class="booking-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= booking.listing.photos.any? ? (cl_image_path booking.listing.photos.first.key, heght: 280, crop: :fill) : "" %>')">
+<div class="listings-container">
+  <% @my_listings.each do |listing| %>
+    <div class="listing-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= listing.photos.any? ? (cl_image_path listing.photos.first.key, heght: 280, crop: :fill) : "" %>')">
     <h5>
-      <a class="booking-detail-link" href="/listings/<%= booking.listing.id %>/bookings/<%=booking.id%>"><%= booking.listing.title %></a>
+      <a class="listing-detail-link" href="/listings/<%= listing.id %>/"><%=listing.title%></a>
       </h5>
-      <p>Booking accepted: 
-      <%if booking.accepted%>
+    <p>Listing Booked:
+    <%unless listing.bookings.empty?%>
       <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
       </svg>
@@ -21,7 +21,8 @@
     <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
     <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
     </svg>
-    <%end%></p>
+    <%end%>
+    </p>
     </div>
   <% end %>
 </div>

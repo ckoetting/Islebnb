@@ -20,7 +20,7 @@
 <h3 style="text-align: center; margin: 15px; font-size: 35px;">Booking Details:</h3>
 <div class="booking-details-container">
   <div class="booking-details">
-    <h5>Booking accepted: 
+    <h5>Booking accepted:
     <%if @booking.accepted%>
       <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -40,5 +40,6 @@
     <h5>Address: <%=@booking.address%></h5>
     <h5>Email: <%=@booking.user.email%></h5>
     <h5>Message: <%=@booking.message%></h5>
+  <div class="write-btn"><%= link_to '<button type="button" class="btn nav-item btn-primary">Write Review</button>'.html_safe, new_listing_review_path %></div>
   </div>
 </div>

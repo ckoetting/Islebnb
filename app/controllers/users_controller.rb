@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_listings
+    @my_listings = current_user.listings
+  end
+
   def my_bookings 
     @my_bookings = current_user.bookings
   end

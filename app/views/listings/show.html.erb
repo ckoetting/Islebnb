@@ -1,11 +1,5 @@
 <div class="show-wrapper">
-<<<<<<< HEAD
-<!--   <div class="row">
-    <h4 class="ml20"><%=@listing.title%></h4>
-  </div> -->
   <div class="show-container">
-=======
->>>>>>> 9abfe630237ea826d5d63d8d70e1e4618de8beb4
   <div class="row">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner h-100">
@@ -30,17 +24,14 @@
       <div class="d-flex">
       <div class="flex-grow-1 listings-title">
         <h6><%= @listing.title %> by full name </h6>
-        <span><p>⭐️ TODO:reviews <%= @listing.address %></p></span>
+        <span><p>⭐️ <%= @listing.reviews.first.stars %> NOT DONE YET | <%= @listing.address %></p></span>
       </div>
-      <div>
-        <img src="<%= cl_image_path current_user.photo.key%>" class="circle" style="height: 50px; width: 50px;">
-      </div>
-<<<<<<< HEAD
-=======
       <div class="listings-avatar">
         <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
       </div>
->>>>>>> 9abfe630237ea826d5d63d8d70e1e4618de8beb4
+      <div>
+        <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
+      </div>
     </div>
     <hr>
     <ul>
@@ -124,12 +115,11 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>
-<<<<<<< HEAD
-   </div>
-=======
       </div>
     </div>
->>>>>>> 9abfe630237ea826d5d63d8d70e1e4618de8beb4
+   </div>
+      </div>
+    </div>
   </div>
 </div>
 </div>

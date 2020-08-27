@@ -1,0 +1,21 @@
+<div class="form-wrapper">
+  <div class="form-container">
+    <h4 class="form-styling">Write a Review</h4>
+    <p> Let us know what you think of our Island</p>
+    <div class="form-inputs form-styling">
+      <%= simple_form_for [@listing, @review] do |f| %>
+        <div class="row">
+          <div class="col s12">
+            <%= f.input :description, input_html:{class: "materialize-textarea"}%>
+          </div>
+          <div class="col s12">
+            <%= f.input :stars, collection: 1..5 %>
+          </div>
+        </div>
+        <div class="form-actions">
+        <%= f.button :submit, "Submit Review", class: "btn btn-primary btn-block" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

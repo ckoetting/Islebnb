@@ -15,6 +15,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def index
+    @reviews = Review.all
+  end
+
   def edit
     review = Review.find(params[:id])
   end

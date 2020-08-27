@@ -1,7 +1,4 @@
 <div class="show-wrapper">
-<!--   <div class="row">
-    <h4 class="ml20"><%=@listing.title%></h4>
-  </div> -->
   <div class="row">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner h-100">
@@ -28,7 +25,9 @@
         <h6><%= @listing.title %> by full name </h6>
         <span><p>⭐️ reviews <%= @listing.address %></p></span>
       </div>
-      <div class="listings-avatar"></div>
+      <div class="listings-avatar">
+        <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
+      </div>
     </div>
     <hr>
     <ul>
@@ -93,10 +92,17 @@
       <h6>Description</h6>
         <p>
           <%= @listing.description%>
-          <%= Faker::Lorem.paragraph(sentence_count: 10) %>
         </p>
-        <a href="#" class="btn btn-primary mt20">Book this island</a>
+        <a href="/listings/<%=@listing.id%>/bookings/new" class="btn btn-primary mt20">Book this island</a>
       </div>
+      <%if @listing.user == current_user%>
+       <%=link_to listing_destroy_path(@listing), class: "btn waves-effect waves-light red", style: "margin-top: 15px;" do%><svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+          <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+          </svg>
+          Delete Listing
+        <%end%>
+      <%end%>
     </div>
     <div class="col s4">
       <div class="listings-map">
@@ -106,9 +112,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>
       </div>
-      <h6>Description</h6>
-      <p><%=@listing.description%></p>
-      <a href="/listings/<%=@listing.id%>/bookings/new" class="btn btn-primary">Book this island</a>
     </div>
   </div>
 </div>

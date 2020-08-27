@@ -10,7 +10,7 @@ require 'faker'
 puts 'Creating 10 fake listings...'
 10.times do
   listing = Listing.new(
-    title:    "#{Faker::Address.city_prefix}, #{Faker::Address.country}",
+    title:    "#{Faker::TvShows::FamilyGuy.character}",
     description: "#{Faker::Lorem.sentence(word_count: 20, supplemental: false, random_words_to_add: 5)}"
   )
   listing.save!

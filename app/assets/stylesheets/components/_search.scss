@@ -9,21 +9,18 @@
     color: white;
     font-size: 24px;
     font-weight: lighter;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 99px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     margin: auto;
     margin-top: 20px;
     width: 592px;
 }
-   
+
 #search {
     width: 424px;
     display: flex;
     flex-flow: row-reverse;
     align-items: center;margin: 3vh;
     padding: 30px;
-    background-color: rgba(0,0,0,0.60);
+    background-color: rgba(0,0,0,0.50);
     border-radius: 5px;
 }
 
@@ -31,8 +28,14 @@
     font-size: 16px;
     color: black;
   }
-  
-  .flex-2 {
-      display: flex;
+
+  #search_by_title_and_price {
+    border: none;
   }
-  
+
+  input#search_by_title_and_price.form-control {
+    margin: 0;
+    &:focus {
+      border: none;
+    }
+    }

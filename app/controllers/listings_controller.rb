@@ -1,11 +1,8 @@
 class ListingsController < ApplicationController
   def index
-    if params[:query].present?
-      @listings = Listing.where(title: params[:query])
-    else
-      @listings = Listing.all
-    end
+      @listings = Listing.search_by_title_and_price(params[:search_by_title_and_price])
   end
+  
 
   def show
     @listing = Listing.find(params[:id])

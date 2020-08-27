@@ -21,7 +21,10 @@
     width: 424px;
     display: flex;
     flex-flow: row-reverse;
-    align-items: center;
+    align-items: center;margin: 3vh;
+    padding: 30px;
+    background-color: rgba(0,0,0,0.60);
+    border-radius: 5px;
 }
 
   #query {
@@ -32,3 +35,4 @@
   .flex-2 {
       display: flex;
   }
+  

@@ -4,21 +4,19 @@
       <div id="banner-logo-seperator"></div>
       <h3>Your Island, your rules!</h3>
   </div>
-</div>
-
- 
-<div class="flex-1">
+  <div class="flex-1">
   <div class="flex-2">
   <%= form_tag listings_path, method: :get, id: "search" do %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :search_by_title_and_price,
+    params[:search_by_title_and_price],
     class: "form-control",
     placeholder: "Find an Island"
   %>
   </div>
 </div>
 <% end %>
+</div>
 
 <div class="listings-container">
   <% @listings.each do |listing| %>

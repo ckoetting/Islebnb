@@ -1,0 +1,42 @@
+<div class="form-wrapper">
+  <div class="form-container">
+    <h4 class="form-styling">Write a Review</h4>
+    <p> Let us know what you think of our Island</p>
+    <div class="form-inputs form-styling">
+      <%= simple_form_for @listing do |f| %>
+        <div class="row">
+          <div class="col s12">
+            <%= f.input :description, input_html:{class: "materialize-textarea"}%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <%= f.input :landscapes, collection: 1..5 %>
+          </div>
+          <div class="col s6">
+            <%= f.input :sea, collection: 1..5 %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <%= f.input :food, collection: 1..5 %>
+          </div>
+          <div class="col s6">
+            <%= f.input :lodgings, collection: 1..5 %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <%= f.input :position, collection: 1..5 %>
+          </div>
+          <div class="col s6">
+            <%= f.input :value_for_money, collection: 1..5 %>
+          </div>
+        </div>
+          <div class="form-actions">
+        <%= f.button :submit, "Submit Review", class: "btn btn-primary btn-block" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

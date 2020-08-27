@@ -27,9 +27,6 @@
         <span><p>⭐️ TODO:reviews <%= @listing.address %></p></span>
       </div>
       <div>
-        <img src="<%= cl_image_path current_user.photo.key%>" class="circle" style="height: 50px; width: 50px;">
-      </div>
-      <div class="listings-avatar">
         <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
       </div>
     </div>

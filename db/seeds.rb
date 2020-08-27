@@ -21,6 +21,7 @@ puts 'Creating 10 fake listings...'
   files.each do |file|
     listing.photos.attach(io: file, filename: 'img.png', content_type: 'image/png')
   end
+    title:    "#{Faker::TvShows::FamilyGuy.character}",
   listing.save!
 end
 puts 'Finished!'

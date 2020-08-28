@@ -1,43 +1,43 @@
 <div class="form-wrapper">
   <div class="form-container">
-<h4 class="form-styling">Register your island</h4>
+    <h4 class="form-styling">Register your island</h4>
     <div class="form-inputs form-styling">
-<%= simple_form_for @listing do |f| %>
-<div class="row">
-  <div class="col s12">
-  <%= f.input :title %>
-  <%= f.input :description, input_html:{class: "materialize-textarea"}%>
-  <%= f.input :address %>
-</div>
-</div>
-<div class="row">
-  <div class="col s6">
-    <%= f.input :bedrooms %>
+      <%= simple_form_for @listing do |f| %>
+      <div class="row">
+        <div class="col s12">
+          <%= f.input :title %>
+          <%= f.input :description, input_html:{class: "materialize-textarea"}%>
+          <%= f.input :address, id: "listing_address" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <%= f.input :bedrooms %>
+        </div>
+        <div class="col s6">
+          <%= f.input :bathrooms %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <%= f.input :house_type %>
+        </div>
+        <div class="col s6">
+          <%= f.input :price %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <%= f.input :max_guests %>
+        </div>
+        <div class="col s6">
+          <%= f.input :photos, as: :file, input_html: { multiple: true, class: "mt20" } %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Create Island Listing", class: "btn btn-primary btn-block" %>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="col s6">
-    <%= f.input :bathrooms %>
-  </div>
-</div>
-  <div class="row">
-    <div class="col s6">
-      <%= f.input :house_type %>
-    </div>
-    <div class="col s6">
-      <%= f.input :price %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s6">
-      <%= f.input :max_guests %>
-    </div>
-    <div class="col s6">
-      <%= f.input :photos, as: :file, input_html: { multiple: true, class: "mt20" } %>
-    </div>
-  </div>
-    <div class="form-actions">
-  <%= f.button :submit, "Create Island Listing", class: "btn btn-primary btn-block" %>
-    </div>
-<% end %>
-</div>
-</div>
 </div>

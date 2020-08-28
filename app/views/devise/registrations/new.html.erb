@@ -1,36 +1,36 @@
 <div class="form-wrapper">
   <div class="form-container">
     <h4 class="form-styling">
-  Sign up and start searching</h4>
+    Sign up and start searching</h4>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
     <div class="form-inputs form-styling">
-    <%= f.input :full_name%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-     <%= f.input :description,
-                required: true %>           
-    <%= f.input :photo,
-                required: true, 
-                as: :file %>
-   </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block"%>
+      <%= f.input :full_name%>
+      <%= f.input :email,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+      required: true,
+      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+      input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+      required: true,
+      input_html: { autocomplete: "new-password" } %>
+      <%= f.input :description,
+      required: true %>
+      <%= f.input :photo,
+      required: true,
+      as: :file %>
     </div>
-<% end %>
-<div class="separator mt-3">Already have an account?</div>
-<div style="text-align: center" class="mt-3">
-<%= render "devise/shared/links" %>
-</div>
-</div>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block"%>
+    </div>
+    <% end %>
+    <div class="separator mt-3">Already have an account?</div>
+    <div style="text-align: center" class="mt-3">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
 </div>

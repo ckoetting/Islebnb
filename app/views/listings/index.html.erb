@@ -1,32 +1,30 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);">
   <div class="banner-container">
-      <img id="banner-logo" src="https://res.cloudinary.com/corneliuskf/image/upload/v1598349410/islebnb_w_rn3kyi.svg">
-      <div id="banner-logo-seperator"></div>
-      <h3>Your Island, your rules!</h3>
+    <img id="banner-logo" src="https://res.cloudinary.com/corneliuskf/image/upload/v1598349410/islebnb_w_rn3kyi.svg">
+<!--     <div id="banner-logo-seperator"></div>
+ -->    <h3>your Island, your rules</h3>
   </div>
   <div class="flex-1">
-  <div class="flex-2">
-  <%= form_tag listings_path, method: :get, id: "search" do %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <%= text_field_tag :search_by_title_and_price,
-    params[:search_by_title_and_price],
+    <%= form_tag listings_path, method: :get, id: "search" do %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= text_field_tag :search_by_title_and_price,
+    params[:search_ƒby_title_and_price],
     class: "form-control",
-    placeholder: "Find an Island"
-  %>
+      placeholder: "Find an Island"
+      %>
+    </div>
+    <% end %>
   </div>
-</div>
-<% end %>
-</div>
 
-<div class="listings-container">
-  <% @listings.each do |listing| %>
+  <div class="listings-container">
+    <% @listings.each do |listing| %>
 
     <div class="listing-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= listing.photos.any? ? (cl_image_path listing.photos.first.key, heght: 280, crop: :fill) : "" %>')">
-    <h5>
-      <a class="listing-detail-link" href="/listings/<%= listing.id %>">
+    <h5 class="listing-link">
+      <%= link_to listing_path(listing) do %>
         <%= listing.title %>
-        </a>
+        <% end %>
       </h5>
     </div>
-<% end %>
-</div>
+    <% end %>
+  </div>

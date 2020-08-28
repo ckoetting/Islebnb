@@ -1,4 +1,4 @@
-.bookings-container {
+.listings-container {
   margin: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -6,7 +6,7 @@
   row-gap: 20px;
   justify-items: stretch;
 }
-.booking-card {
+.listing-card {
   background-size: cover;
   background-position: center;
   height: 250px;
@@ -22,27 +22,27 @@
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.booking-card p {
+.listing-card p {
   font-size: 22px;
   font-weight: bold;
 }
-.booking-detail-link {
+.listing-detail-link {
   text-decoration: none;
   color: white;
 }
-.booking-detail-link:hover {
+.listing-detail-link:hover {
   text-decoration: none;
   color: gray;
   transition-delay: 50ms;
 }
 @media(max-width: 992px) {
-  .bookings-container {
+  .listings-container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media(max-width: 768px) {
-  .bookings-container {
+  .listings-container {
     grid-template-columns: 1fr;
   }
 }
@@ -56,6 +56,14 @@
 .banner h3 {
   font-size: 30px;
   color: white;
-  // margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 5px;
+  margin-top: -10px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+
+
+
+

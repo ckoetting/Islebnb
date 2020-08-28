@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  def show 
+  def show
     @user = User.find(params[:id])
   end
-  
+
   def my_booking_requests
     @my_booking_requests = []
     current_user.listings.each do |listing|

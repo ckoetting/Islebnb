@@ -1,26 +1,34 @@
 <div class="profile-container">
-      <div class="user-avatar">
-        <img src="<%= cl_image_path current_user.photo.key%>" class="circle" style="height: 250px; width: 250px;">
-        <%= link_to '<button type="button" class="btn-floating waves-effect waves-light red"><i class="material-icons">border_color</i></a>'.html_safe, edit_user_registration_path(@user) %>
-      </div>
-      <div class="user-details">
-        <h4 class="card-title"><%= @user.full_name %></h4>
-        <p><%=@user.description%></p>
-      </div>
-      <div class="d-flex justify-content-center">
-        <div class="user-stats">
-        <h6><i class="fas fa-house-user"></i><%=current_user.listings.size%> listings </h6>
+  <div class="user-avatar">
+    <img src="<%= cl_image_path current_user.photo.key%>" class="circle" style="height: 250px; width: 250px;">
+    <%= link_to '<button type="button" class="btn-floating waves-effect waves-light red"><i class="material-icons">border_color</i></a>'.html_safe, edit_user_registration_path(@user) %>
+    </div>
+    <div class="user-details">
+      <h4 class="card-title"><%= @user.full_name %></h4>
+      <p><%=@user.description%></p>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="user-stats">
+        <h6><i class="fas fa-house-user"></i><%=current_user.listings.size%> listing<%if current_user.listings.size > 1%>s<%end%></h6>
         <h6><i class="fas fa-cannabis"></i> Verified User </h6>
         <h6><i class="fas fa-star"></i> 4.3 Avg Stars </h6>
       </div>
+    </div>
+    <div class="button-actions-container">
+      <div class="user-actions">
+        <%= link_to new_listing_path, class: "btn nav-item btn-primary" do %>
+          Add Listing
+        <% end %>
+        <%= link_to my_listings_path, class: "btn nav-item btn-primary" do %>
+          My Listings
+        <% end %>
+        <%= link_to my_bookings_path, class: "btn nav-item btn-primary" do %>
+          My Bookings
+        <% end %>
+        <%= link_to my_booking_requests_path, class: "btn nav-item btn-primary" do %>
+          My Booking Requests
+        <% end %>   
       </div>
-        <div class="button-actions-container">
-          <div class="user-actions">
-          <%= link_to '<button type="button" class="btn nav-item btn-primary">Add Listing</button>'.html_safe, new_listing_path %>
-          <%= link_to '<button type="button" class="btn nav-item btn-primary">My Listings</button>'.html_safe, my_listings_path %>
-          <%= link_to '<button type="button" class="btn nav-item btn-primary">My Bookings</button>'.html_safe, my_bookings_path %>
-          <%= link_to '<button type="button" class="btn nav-item btn-primary">My Booking Requests</button>'.html_safe, my_booking_requests_path %>
-        </div>
-        </div>
+    </div>
   </div>
 

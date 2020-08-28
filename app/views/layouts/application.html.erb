@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Islebnb - your Island, your Rules</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!--Roboto Font for Material UI-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
-
-  <body style="margin-top: 60px">
-    <%= render "shared/navbar" %>
-    <%= yield %>
-  </body>
-  <footer>
+<head>
+  <title>Islebnb - your Island, your Rules</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!--Roboto Font for Material UI-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+</head>
+<body style="margin-top: 60px">
+  <%= render "shared/navbar" %>
+  <div class="content">
+    <div class="content-inside">
+      <%= yield %>
+    </div>
+  </div>
+  <footer class="footer">
     <%= render "shared/footer" %>
   </footer>
+</body>
 </html>

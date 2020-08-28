@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
+    @listing = Listing.find(params[:listing_id])
   end
 
   def edit

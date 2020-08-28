@@ -17,3 +17,13 @@
 .modal-header {
   border-bottom: 0px;
 }
+.modal.show .modal-dialog {
+    transform: none;
+    margin-top: -30px;
+}
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto;
+    padding-right: 130px;
+    padding-top: 25px;
+}

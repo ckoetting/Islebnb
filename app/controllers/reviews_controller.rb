@@ -1,13 +1,16 @@
 class ReviewsController < ApplicationController
   def new
     @listing = Listing.find(params[:listing_id])
-    @review = Review.new
+    @user = current_user
+    @review = Review.new()
   end
 
   def create
     @review = Review.new(review_params)
+    @user = current_user
     @listing = Listing.find(params[:listing_id])
     @review.listing = @listing
+    @review.user_id = @user.id
     if @review.save
       redirect_to listing_path(@listing)
     else
@@ -43,6 +46,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:description, :stars)
+    params.require(:review).permit(:description, :stars, :user_id)
   end
 end

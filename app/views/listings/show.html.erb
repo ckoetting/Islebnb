@@ -24,7 +24,7 @@
       <div class="d-flex">
       <div class="flex-grow-1 listings-title">
         <h6><%= @listing.title %> by <%=@listing.user.full_name%></h6>
-        <!--<span><p>⭐️  NOT DONE YET | <%= @listing.address %></p></span>-->
+        <span><p><%= link_to @rating, listing_reviews_path(@listing.id) %> | <%= @listing.address %></p></span>
       </div>
       <div>
       <% if @listing.user.photo.attached? %>
@@ -122,9 +122,9 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
      <%= f.input :description,
-                required: true %>           
+                required: true %>
     <%= f.input :photo,
-                required: true, 
+                required: true,
                 as: :file %>
       </div>
       <div class="modal-footer">

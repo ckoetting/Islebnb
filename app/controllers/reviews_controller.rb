@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   def new
     @listing = Listing.find(params[:listing_id])
     @user = current_user
-    @review = Review.new()
+    @review = Review.new
   end
 
   def create

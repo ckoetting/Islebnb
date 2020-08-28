@@ -43,13 +43,13 @@
 // footer
 .container-footer {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .footer {
   padding-left: 30px;
   padding-right: 30px;
-  display: flex;
+  flex-shrink: 0;
   justify-content: space-between;
   padding-top: 15px;
   left: 0;
@@ -76,7 +76,6 @@
   justify-content: space-between;
 }
 
-
 .carousel .carousel-item.active {
   visibility: visible;
   height: 100%;
@@ -84,4 +83,15 @@
   img {
     object-fit: cover;
   }
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
 }

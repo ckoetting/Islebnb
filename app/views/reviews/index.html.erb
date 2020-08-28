@@ -15,7 +15,7 @@
       </div>
     </div>
    <div class="cards row col-sm-12">
-    <% @reviews.each do |review| %>
+    <% @listing.reviews.each do |review| %>
     <div class="card col-sm-5">
       <div class="user"><img src=" <%= cl_image_path review.user.photo.key %> " class="circle" style="height: 50px; width: 50px;"> <%= review.user.full_name %> </div>
       <div class="content"><p><%= review.description %></p></div>

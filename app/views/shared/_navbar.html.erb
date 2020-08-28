@@ -4,7 +4,6 @@
     <%= link_to listings_path, class: "navbar-brand" do %>
     <%= image_tag("isle.png") %>
     <% end %>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -29,14 +28,22 @@
           <img src="<%= cl_image_path current_user.photo.key%>" class="dropdown-toggle circle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 60px; height: 60px;">
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="/users/<%= current_user.id %>">My Profile</a>
-            <a class="dropdown-item" href="/users/my_bookings">My Bookings</a>
-            <a class="dropdown-item" href="/users/my_booking_requests">My Booking Requests</a>
+            <%= link_to my_bookings_path, class: "dropdown-item" do %>
+              My Bookings
+            <% end %>
+            <%= link_to my_booking_requests_path, class: "dropdown-item" do %>
+              My Booking Requests
+            <% end %>
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
           </div>
         </div>
       <% else %>
-        <%= link_to '<button type="button" class="btn nav-item btn-primary">Register</button>'.html_safe, new_user_registration_path %>
-        <%= link_to '<button type="button" class="btn nav-item btn-primary">Sign in</button>'.html_safe, new_user_session_path %>
+        <%= link_to new_user_registration_path, class: "btn nav-item btn-primary" do %>
+          Register
+        <% end %>
+        <%= link_to new_user_session_path, class: "btn nav-item btn-primary" do %>
+          Sign in
+        <% end %>  
       <% end %>
     </div>
   </div>

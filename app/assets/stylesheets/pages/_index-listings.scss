@@ -7,7 +7,6 @@
 .banner h3 {
   font-size: 30px;
   color: white;
-  margin-top: 20px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -68,4 +67,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+}
+.listing-link a{
+  text-decoration-style: none;
+  color: white;
 }

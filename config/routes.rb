@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'users/my_bookings', to: 'users#my_bookings', as: :my_bookings
   get 'users/my_booking_requests/:id/change_status', to: 'bookings#change_status', as: :change_status
   get 'users/my_listings', to: 'users#my_listings', as: :my_listings
-  resources :users, only: [:show]
+  resources :users, only: [:show], as: :user_profile
 end

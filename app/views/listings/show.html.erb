@@ -26,7 +26,9 @@
       <div class="d-flex">
       <div class="flex-grow-1 listings-title">
         <h6><%= @listing.title %> by full name </h6>
-        <span><p>⭐️ reviews <%= @listing.address %></p></span>
+        <span><p>⭐️ <%= link_to listing_reviews_path(@listing.id), class: "btn nav-item btn-primary" do %>
+  Reviews
+<% end %> <%= @listing.address %></p></span>
       </div>
       <div class="listings-avatar"></div>
     </div>

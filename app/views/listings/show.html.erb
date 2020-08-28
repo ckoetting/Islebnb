@@ -24,7 +24,7 @@
         <div class="d-flex">
           <div class="flex-grow-1 listings-title">
             <h6><%= @listing.title %> by full name </h6>
-            <!--<span><p>⭐️  NOT DONE YET | <%= @listing.address %></p></span>-->
+            <span><p><%= @rating %> | <%= @listing.address %></p></span>
           </div>
           <div>
             <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">

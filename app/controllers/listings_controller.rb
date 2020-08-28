@@ -57,7 +57,7 @@ class ListingsController < ApplicationController
         n += 1
       end
       total = total / n
-      return "⭐️ #{total}"
+      return "⭐️ #{total.round(2)}"
     else
       return "No review yet"
     end

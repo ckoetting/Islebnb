@@ -19,6 +19,53 @@
         </a>
       </div>
     </div>
+  </div>
+  <div class="row ml20">
+    <div class="col s8">
+      <div class="d-flex">
+      <div class="flex-grow-1 listings-title">
+        <h6><%= @listing.title %> by full name </h6>
+        <!--<span><p>⭐️  NOT DONE YET | <%= @listing.address %></p></span>-->
+      </div>
+      <div>
+      <% if @listing.user.photo.attached? %>
+        <%= cl_image_tag @listing.user.photo.key, class: "circle", height: 60, width: 60, crop: 'fill' %>
+      <% end %>
+      </div>
+    </div>
+    <hr>
+    <ul>
+      <li>
+        <div class="d-flex mb10 li-listing">
+          <div>
+            <i class="material-icons">home</i>
+          </div>
+          <div class="last-child">
+            <div><h6>House type</h6></div>
+            <div><p><%= @listing.house_type %></p></div>
+          </div>
+      </div>
+    </li>
+      <li>
+        <div class="d-flex mb10 li-listing">
+          <div>
+            <i class="material-icons">hotel</i>
+          </div>
+          <div class="last-child">
+            <div><h6>Amount of bedrooms</h6></div>
+            <div><p><%= @listing.bedrooms %></p></div>
+          </div>
+      </div>
+    </li>
+      <li>
+        <div class="d-flex mb10 li-listing">
+          <div>
+            <i class="material-icons">hot_tub</i>
+          </div>
+          <div class="last-child">
+            <div><h6>Amount of bathrooms</h6></div>
+            <div><p><%= @listing.bathrooms %></p></div>
+
     <div class="row ml20">
       <div class="col s8">
         <div class="d-flex">
@@ -29,6 +76,70 @@
           <div>
             <img src="<%= cl_image_path @listing.user.photo.key%>" class="circle" style="height: 60px; width: 60px;">
           </div>
+      </div>
+    </li>
+      <li>
+        <div class="d-flex mb10 li-listing">
+          <div>
+            <i class="material-icons">euro_symbol</i>
+          </div>
+          <div class="last-child">
+            <div><h6>Price per night</h6></div>
+            <div><p><%= @listing.price %></p></div>
+          </div>
+      </div>
+    </li>
+    </ul>
+    <hr>
+      <div class="listings-title">
+      <h6>Description</h6>
+        <p>
+          <%= @listing.description%>
+        </p>
+        <a href="/listings/<%=@listing.id%>/bookings/new" class="btn btn-primary mt20" <%unless user_signed_in? %>data-toggle="modal" data-target="#myModal"<%end%>>Book this island</a>
+      </div>
+      <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign in</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :full_name%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+     <%= f.input :description,
+                required: true %>           
+    <%= f.input :photo,
+                required: true, 
+                as: :file %>
+      </div>
+      <div class="modal-footer">
+        
+        <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block"%>
+      </div>
+    </div>
+
+  </div>
+  <%end%>
+</div>
+<!--Popup-->
+      <%if @listing.user == current_user%>
+       <%=link_to listing_destroy_path(@listing), class: "btn waves-effect waves-light red", style: "margin-top: 15px;" do%><svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         </div>
         <hr>
         <ul>

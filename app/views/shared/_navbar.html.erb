@@ -35,8 +35,14 @@
           </div>
         </div>
       <% else %>
-        <%= link_to '<button type="button" class="btn nav-item btn-primary">Register</button>'.html_safe, new_user_registration_path %>
-        <%= link_to '<button type="button" class="btn nav-item btn-primary">Sign in</button>'.html_safe, new_user_session_path %>
+        <%= button_to new_user_registration_path, class: "btn nav-item btn-primary" do %>
+          Register
+        <% end %>
+
+        <%= button_to new_user_session_path, class: "btn nav-item btn-primary" do %>
+          Sign in
+        <% end %>
+        
       <% end %>
     </div>
   </div>

@@ -20,7 +20,7 @@
     <% @listings.each do |listing| %>
 
     <div class="listing-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= listing.photos.any? ? (cl_image_path listing.photos.first.key, heght: 280, crop: :fill) : "" %>')">
-    <h5>
+    <h5 class="listing-link">
       <%= link_to listing_path(listing) do %>
         <%= listing.title %>
         <% end %>
